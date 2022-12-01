@@ -14,8 +14,6 @@ for elf in elfCalories:
 
 perElfCalories.sort()
 
-print(perElfCalories)
-
 # puzzle 1
 print(perElfCalories[-1])
 
