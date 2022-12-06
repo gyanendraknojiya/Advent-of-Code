@@ -3,7 +3,9 @@ def readInput():
     input = "".join(inputList)
     return input
 
+
 input = readInput()
+
 
 def findMarker(noOfSeqs):
     a = 0

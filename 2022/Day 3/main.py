@@ -17,7 +17,7 @@ input = input.split("\n")
 def puzzle1():
     myScore = 0
     for compartment in input:
-        firstCompartment, secondCompartment = compartment[:len(compartment)//2], compartment[len(compartment)//2:]
+        firstCompartment, secondCompartment = compartment[:len(compartment) // 2], compartment[len(compartment) // 2:]
         commonCompartment = list(set(firstCompartment) & set(secondCompartment))
         myScore += charPriority(commonCompartment[0])
     return myScore

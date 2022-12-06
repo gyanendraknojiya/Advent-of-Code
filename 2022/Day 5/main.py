@@ -19,7 +19,7 @@ def makeAry():
     stacksOfCrates, rearrangementProcedure = input.split("\n\n")
     stacksOfCrates = stacksOfCrates.replace("    ", ',').replace(" ", ",")
     stacksOfCrates = stacksOfCrates.split('\n')
-    stacksOfCrates = stacksOfCrates[:len(stacksOfCrates)-1]
+    stacksOfCrates = stacksOfCrates[:len(stacksOfCrates) - 1]
     stacksOfCrates = stacksOfCrates[::-1]
 
     stacksOfCratesAry = []
@@ -45,7 +45,7 @@ def shuffleStacks1(rearrangementProcedure, stacks):
     move, form, to = rearrangementProcedure
     move, form, to = int(move), (int(form) - 1), (int(to) - 1)
     moveFrom = stacks[form]
-    breakPoint = len(moveFrom)-move
+    breakPoint = len(moveFrom) - move
     toSave, toMove = moveFrom[:breakPoint], moveFrom[breakPoint:]
     stacks[form] = toSave
     # stack order
@@ -53,11 +53,12 @@ def shuffleStacks1(rearrangementProcedure, stacks):
     stacks[to] = stacks[to] + toMove
     return stacks
 
+
 def shuffleStacks2(rearrangementProcedure, stacks):
     move, form, to = rearrangementProcedure
     move, form, to = int(move), (int(form) - 1), (int(to) - 1)
     moveFrom = stacks[form]
-    breakPoint = len(moveFrom)-move
+    breakPoint = len(moveFrom) - move
     toSave, toMove = moveFrom[:breakPoint], moveFrom[breakPoint:]
     stacks[form] = toSave
     # QueueOrder
@@ -85,6 +86,7 @@ def puzzle2():
         stack = stack[-1].replace("[", '').replace("]", '')
         outputOrder += stack
     return outputOrder
+
 
 print(puzzle1())
 

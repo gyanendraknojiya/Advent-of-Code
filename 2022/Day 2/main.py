@@ -10,7 +10,6 @@ scores2 = {
     "Z": 6,  # win
 }
 
-
 combinations1 = {
     "AX": 3,
     "AY": 6,
@@ -55,7 +54,7 @@ def puzzle1():
         opponentScore = score[0]
         myPoints = scores1[mySelection]
         myScore += myPoints
-        myScore += combinations1[opponentScore+mySelection]
+        myScore += combinations1[opponentScore + mySelection]
     return myScore
 
 
@@ -66,7 +65,7 @@ def puzzle2():
         opponentScore = score[0]
         myPoints = scores2[mySelection]
         myScore += myPoints
-        myScore += combinations2[opponentScore+mySelection]
+        myScore += combinations2[opponentScore + mySelection]
     return myScore
 
 
