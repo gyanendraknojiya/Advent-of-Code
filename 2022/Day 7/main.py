@@ -1,6 +1,3 @@
-import sys
-
-
 def readInput():
     inputList = open("./input.txt", "r").readlines()
     return "".join(inputList)
@@ -71,27 +68,27 @@ for cmd in data:
         output[path] = getDirSize(path)
 
 
-
 def puzzle1():
-  totalSize = 0
-  for size in output.values():
-    if size < 100000:
-      totalSize +=size
-  return totalSize
+    totalSize = 0
+    for size in output.values():
+        if size < 100000:
+            totalSize += size
+    return totalSize
+
 
 def puzzle2():
-  totalSize = output['root']
-  # for pathName, size in output.items():
-  totalDiskSpace = 70000000
-  requiredSpace = 30000000
-  availableSpace = totalDiskSpace - totalSize
-  spaceToDelete = requiredSpace - availableSpace
-  fileToDelete = totalSize
-  directory = ''
-  if spaceToDelete > 0:
-    for pathName, size in output.items():
-      if (size >= spaceToDelete) & (size <= fileToDelete):
-        fileToDelete = size
-        directory = pathName
-  return fileToDelete
+    totalSize = output['root']
+    totalDiskSpace = 70000000
+    requiredSpace = 30000000
+    availableSpace = totalDiskSpace - totalSize
+    spaceToDelete = requiredSpace - availableSpace
+    fileToDelete = totalSize
+    if spaceToDelete > 0:
+        for size in output.values():
+            if (size >= spaceToDelete) & (size <= fileToDelete):
+                fileToDelete = size
+    return fileToDelete
+
+
+print(puzzle1())
 print(puzzle2())
